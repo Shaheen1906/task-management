@@ -23,11 +23,11 @@ python manage.py collectstatic --noinput
 #    user.save()" \ 
 #    | python manage.py shell
 
-echo "from django.contrib.auth import get_user_model; \
-  User = get_user_model(); \
-  user = User.objects.get(username='shaheenansari1906@gmail.com'); \
-  user.set_password('adminpass@123'); \
-  user.save()" \
-  | python manage.py shell
+# echo "from django.contrib.auth import get_user_model; \
+#   User = get_user_model(); \
+#   user = User.objects.get(username='shaheenansari1906@gmail.com'); \
+#   user.set_password('adminpass@123'); \
+#   user.save()" \
+#   | python manage.py shell
 
-gunicorn task_management.wsgi:application --bind 0.0.0.0$PORT
+gunicorn task_management.wsgi:application --bind 0.0.0.0:$PORT
