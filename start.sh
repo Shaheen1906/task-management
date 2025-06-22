@@ -30,4 +30,4 @@ echo "from django.contrib.auth import get_user_model; \
   user.save()" \
   | python manage.py shell
 
-gunicorn task_management.wsgi.application --bind 0.0.0.0$PORT
+gunicorn task_management.wsgi:application --bind 0.0.0.0$PORT
